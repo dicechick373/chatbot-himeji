@@ -224,9 +224,7 @@ CHUNK_OVERLAP = 100
 
 Chatの回答に出典（土木技術管理規程集）やページ数を含めるためには、[Documentクラス](https://python.langchain.com/api_reference/core/documents/langchain_core.documents.base.Document.html)のメタデータを設定する必要がある。
 
-
-format_metadataという関数を作成して対応する。
-ただし、文献によって設定が異なるので、出力結果をテストしながら関数を修正していくことが必要。
+文献によって設定が異なるので、出力結果をテストしながら関数を修正していくことが必要。
 
 ```python
 def format_metadata(docs: Iterable[Document], page_prefix: int)-> Iterable[Document]:
@@ -248,7 +246,9 @@ def format_metadata(docs: Iterable[Document], page_prefix: int)-> Iterable[Docum
 
 変換してmetadataを付与したDocumentをローカルファイルに保存する。
 
-無料枠で利用するためには、1文献で1ファイルを作成する必要がある。（このため、画面では対象の文献を指定しなければならないという制約が発生する）
+[FAISS](https://ai.meta.com/tools/faiss/)を無料枠で利用するためにはサイズ制限があるので、1文献で1ファイルを作成することにした。
+
+このため、Chat画面では対象の文献を指定しなければならないという制約が発生する。
 
 ```python
 def save_local_faiss(docs: Iterable[Document]):
