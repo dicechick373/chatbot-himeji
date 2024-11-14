@@ -222,7 +222,7 @@ CHUNK_OVERLAP = 100
 
 ### メタ情報（出典、ページ数）の付与
 
-Chatの回答に出典（土木技術管理規程集）やページ数を含めるためには、[Documentクラス](https://python.langchain.com/api_reference/core/documents/langchain_core.documents.base.Document.html)のメタデータを設定する必要がある。
+Chatの回答に出典やページ数を含めるためには、[Documentクラス](https://python.langchain.com/api_reference/core/documents/langchain_core.documents.base.Document.html)のメタデータを設定する必要がある。
 
 文献によって設定が異なるので、出力結果をテストしながら関数を修正していくことが必要。
 
